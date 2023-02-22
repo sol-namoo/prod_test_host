@@ -45,8 +45,8 @@ module.exports = (_, argv) => ({
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        layout: "layout@http://localhost:3001/remoteEntry.js",
-        pages: "pages@http://localhost:3002/remoteEntry.js",
+        layout: argv.mode === "production" ? "layout@https://main.dzcbmbv30vcnc.amplifyapp.com/remoteEntry.js" : "layout@http://localhost:3001/remoteEntry.js",
+        pages: argv.mode === "production" ? "pages@https://main.dz39vgz51901u.amplifyapp.com/remoteEntry.js" : "pages@http://localhost:3002/remoteEntry.js",
       },
       exposes: {},
       shared: {
